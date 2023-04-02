@@ -1,0 +1,42 @@
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 8px;
+    border: 1px solid;
+    margin: 20px auto;
+    max-width: 650px;
+    padding: 5px 5px;
+    background-color: lightgrey;
+
+}
+
+.user-info {
+    width: 400px;
+    word-wrap: break-word;
+    overflow: hidden;
+    padding: 0 5px;
+    font-size: 24px;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 128px;
+    height: 128px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent
+}
+
+.avatar:hover {
+    border: 2px solid lightyellow;
+}
+
+.delete {
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.delete:hover {
+    scale: 1.3;
+}

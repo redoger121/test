@@ -1,0 +1,46 @@
+<div class="user-card__container">
+
+    <div *ngIf="user" class="grow">
+        <div class="user-image__container">
+            <div class="image-wrapper">
+
+                <div class="user__big-image" [style.background-image]="'url(' + user.avatar + ')'"></div>
+            </div>
+            <img class="user-avatar" src="{{user.avatar}}" alt="user avatar">
+        </div>
+
+        <div class="user-info">
+            <p class="user-name">{{user.first_name}} {{user.last_name}}</p>
+
+            <p class="user-email"> Email: {{user.email}}</p>
+        </div>
+
+
+        <button (click)="setEditing()" class="edit-button"><img src="../../assets/edit.png" alt="edit button"></button>
+
+
+
+
+
+
+        <div *ngIf="editing" class="user-inputs">
+            <label>
+                <span>Имя</span><input #userFirstName type="text" value="{{user.first_name}}">
+            </label>
+            <label>
+                <span>Фамилия</span><input #userLastName type="text" value="{{user.last_name}}">
+            </label>
+            <label>
+                <span>Email</span><input #userEmail type="text" value="{{user.email}}">
+
+            </label>
+            <div *ngIf="errorMessage" class="error" >{{errorMessage}}</div>
+            <button (click)="finishEditUser(userFirstName.value, userLastName.value, userEmail.value)"
+                class="save-button">Save</button>
+        </div>
+
+    </div>
+
+    
+</div>
+<div class="notFound" *ngIf="!user">User not found Error 404</div>
